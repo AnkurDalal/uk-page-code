@@ -2,7 +2,7 @@
   min-height: 100vh;
   box-sizing: border-box;
   padding: 50px 20px 34px;
-
+  overflow-x: hidden;
   text-align: center;
 }
 
@@ -25,6 +25,7 @@
 
 .timeline {
   position: relative;
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 0 2px;
@@ -98,11 +99,12 @@
 .icon {
   position: absolute;
   top: 0;
-  width: 44px;
-  height: 44px;
+  background: linear-gradient(31.91deg, #FCFCFC 15.33%, #E6E6E6 107.96%);
+  width: 65px;
+  height: 64px;
   border: 1px solid #e6e6e6;
   border-radius: 50%;
-  background: #fbfbfb;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +127,9 @@
 }
 
 .text {
+  width: 100%;
   max-width: 520px;
+  box-sizing: border-box;
 }
 
 .left .text {
@@ -160,10 +164,29 @@
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 .description strong {
   font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .timeline {
+    max-width: 960px;
+  }
+
+  .text {
+    max-width: 420px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -177,14 +200,15 @@
   }
 
   .title {
-    font-size: 28px;
+    font-size: 26px;
+    white-space: normal;
   }
 }
 
 @media (max-width: 768px) {
   .section {
     min-height: unset;
-    padding: 36px 18px;
+    padding: 36px 16px;
   }
 
   .heading {
@@ -194,14 +218,14 @@
   }
 
   .timeline::after {
-    left: 23px;
+    left: 20px;
   }
 
   .item {
     width: 100%;
     min-height: auto;
     margin-bottom: 26px;
-    padding: 0 0 0 58px;
+    padding: 0 0 0 112px;
     text-align: left;
   }
 
@@ -212,27 +236,36 @@
   .left,
   .right {
     padding-right: 0;
-    padding-left: 58px;
+    padding-left: 112px;
   }
 
   .left .centerGroup,
   .right .centerGroup {
     top: 1px;
     right: auto;
-    left: -3px;
-    width: 44px;
+    left: 0;
+    width: 94px;
+    height: 56px;
   }
 
   .left .dot,
   .right .dot {
     right: auto;
-    left: 23px;
+    left: 14px;
+    top: 22px;
   }
 
   .left .icon,
   .right .icon {
     right: auto;
-    left: 0;
+    left: 38px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon img {
+    width: 24px;
+    height: 24px;
   }
 
   .left .text {
@@ -244,10 +277,52 @@
   }
 
   .title {
-    font-size: 20px;
+    font-size: 22px;
+    white-space: normal;
   }
 
   .description {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 30px 14px;
+  }
+
+  .heading {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .item,
+  .left,
+  .right {
+    padding-left: 96px;
+  }
+
+  .left .centerGroup,
+  .right .centerGroup {
+    width: 82px;
+  }
+
+  .left .icon,
+  .right .icon {
+    left: 32px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .metric {
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
   }
 }
